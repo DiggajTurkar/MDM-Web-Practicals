@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f2f2f2;
+        }
+        .box {
+            width: 350px;
+            margin: 50px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 6px;
+        }
+        button {
+            padding: 10px 20px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>Student Grade Calculator</h2>
+    <input type="number" id="m1" placeholder="Subject 1 Marks">
+    <input type="number" id="m2" placeholder="Subject 2 Marks">
+    <input type="number" id="m3" placeholder="Subject 3 Marks">
+    <input type="number" id="m4" placeholder="Subject 4 Marks">
+    <input type="number" id="m5" placeholder="Subject 5 Marks">
+
+    <button onclick="calculate()">Calculate Result</button>
+    <div id="result"></div>
+</div>
+<script>
+function calculate() {
+    let total = 0;
+    for (let i = 1; i <= 5; i++) {
+        total += Number(document.getElementById("m" + i).value);
+    }
+    let percentage = total / 5;
+    let grade;
+
+    if (percentage >= 90)
+        grade = "A+";
+    else if (percentage >= 80)
+        grade = "A";
+    else if (percentage >= 70)
+        grade = "B";
+    else if (percentage >= 60)
+        grade = "C";
+    else if (percentage >= 50)
+        grade = "D";
+    else
+        grade = "F";
+    document.getElementById("result").innerHTML =
+        "<h3>Total Marks: " + total + "/500</h3>" +
+        "<h3>Percentage: " + percentage + "%</h3>" +
+        "<h3>Grade: " + grade + "</h3>";
+}
+</script>
+</body>
+</html>
