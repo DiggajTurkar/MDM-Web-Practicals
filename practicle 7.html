@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>College FAQ</title>
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:30px;
+}
+h1{text-align:center;color:#333;}
+.faq{
+width:70%;
+margin:15px auto;
+background:white;
+border-radius:8px;
+box-shadow:0 2px 5px gray;
+}
+.question{
+padding:15px;
+cursor:pointer;
+background:#3498db;
+color:white;
+font-weight:bold;
+}
+.answer{
+display:none;
+padding:15px;
+color:#333;
+}
+</style>
+</head>
+<body>
+
+<h1>SB JAIN College FAQ</h1>
+
+<div class="faq">
+<div class="question">1. What are the college timings?</div>
+<div class="answer">College timings are from 10:30 AM to 5:30 PM.</div>
+</div>
+
+<div class="faq">
+<div class="question">2. How can I apply for admission?</div>
+<div class="answer">You can apply through the college admission portal.</div>
+</div>
+
+<div class="faq">
+<div class="question">3. Where is the department office?</div>
+<div class="answer">The department office is located on the second floor.</div>
+</div>
+
+<div class="faq">
+<div class="question">4. How can I contact the department?</div>
+<div class="answer">You can contact the department through email or phone.</div>
+</div>
+
+<script>
+let questions=document.querySelectorAll(".question");
+questions.forEach(function(question){
+question.addEventListener("click",function(){
+let answer=this.nextElementSibling;
+answer.style.display=answer.style.display==="block"?"none":"block";
+});
+});
+</script>
+
+</body>
+</html>
